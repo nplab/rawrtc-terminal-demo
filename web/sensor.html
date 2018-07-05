@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <title>RAWRTC Web Terminal Demo</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- App -->
+    <link rel="stylesheet" href="sensor.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="status-bar" class="red"></div>
+
+        <div id="navigation">
+            <div id="l-connection" class="active">
+                <b>Connection</b>
+            </div>
+        </div>
+
+        <div id="content">
+            <section id="connection" class="show">
+                <div id="paste-here" contenteditable="true">
+                    Paste a WebSocket URI or the remote parameters here.
+                </div>
+
+                <span>Local Parameters</span>
+                <pre class="parameters" id="local-parameters"></pre>
+
+                <span>Remote Parameters</span>
+                <pre class="parameters" id="remote-parameters"></pre>
+            </section>
+            <section id="data" class="show">
+                <pre class="parameters" id="data"></pre>
+            </section>
+        </div>
+    </div>
+
+    <!-- AdapterJS -->
+    <script src="node_modules/webrtc-adapter/out/adapter.js"></script>
+
+    <!-- WebRTC-to-RAWRTC shim -->
+    <script src="sdp.js"></script>
+    <script src="webrtc-rawrtc.js"></script>
+
+    <!-- App -->
+    <script src="sensor.js"></script>
+</body>
+</html>

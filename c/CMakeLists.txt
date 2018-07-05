@@ -40,5 +40,7 @@ list(APPEND rawrtc_terminal_DEP_LIBRARIES ${LIB_RAWRTC_LIBRARIES})
 # Dependency: lutil (forkpty)
 list(APPEND rawrtc_terminal_DEP_LIBRARIES "util")
 
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}   -std=c11   -pedantic -Wall -Wextra")
+
 # Walk through subdirectories
 add_subdirectory(src)
